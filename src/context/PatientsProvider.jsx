@@ -31,10 +31,6 @@ export const PatientsProvider = ({ children }) => {
 
   }
 
-  useEffect(() => {
-    loadPatients()
-  }, [])
-
   const savePatient = async (patient) => {
 
 

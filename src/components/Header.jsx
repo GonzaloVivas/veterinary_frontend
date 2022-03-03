@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom'
 import useAuth from '../hooks/useAuth'
+import usePatients from '../hooks/usePatients'
 
 const Header = () => {
 
   const { logout } = useAuth()
+
+  const { cleanPatients } = usePatients()
 
   return (
     <header className="py-10 bg-indigo-600">
@@ -16,7 +19,7 @@ const Header = () => {
           <Link to="/admin" className="text-white text-sm">Pacientes</Link>  
           <Link to="/admin/perfil" className="text-white text-sm">Perfil</Link>  
 
-          <button onClick={ logout } type="button" className="text-white text-sm uppercase font-bold">Cerrar Sesión</button>
+          <button onClick={() => { cleanPatients(), logout() } } type="button" className="text-white text-sm uppercase font-bold">Cerrar Sesión</button>
 
         </nav>
 

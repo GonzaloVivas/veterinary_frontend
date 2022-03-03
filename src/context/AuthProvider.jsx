@@ -43,7 +43,6 @@ const AuthProvider = ({ children }) => {
   const logout = () => {
     localStorage.removeItem('token')
     setAuth({})
-    window.reload()
   }
 
   const updateProfile = async profileData => {

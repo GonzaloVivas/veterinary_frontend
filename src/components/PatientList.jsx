@@ -1,10 +1,14 @@
+import { useEffect } from 'react'
 import usePatients from '../hooks/usePatients'
 import Patient from './Patient'
 
 const PatientList = () => {
 
   const { patients, loadPatients } = usePatients()
-  loadPatients()
+  
+  useEffect(() => {
+    loadPatients()
+  }, [])
 
   return (
     <>
